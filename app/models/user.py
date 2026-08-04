@@ -34,8 +34,8 @@ class PaymentMethod(str, enum.Enum):
     card = "card"
     mobile_money = "mobile_money"
 
-    class User(Base):
-        __tablename__ = "users"
+class User(Base):
+    __tablename__ = "users"
 
     user_id = Column(Integer, primary_key=True, index=True)
     username = Column(String(50), nullable=False, unique=True, index=True)
