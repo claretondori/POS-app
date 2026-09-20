@@ -51,5 +51,9 @@ psycopg2-binary
 pydantic
 email-validator
 passlib[bcrypt]
+python_multipart
+pyjwt
+pwdlib[argon2]
+pytest
 
 

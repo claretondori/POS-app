@@ -23,6 +23,11 @@ class UserRepository:
     def get_by_username(self, username: str):
         return self.db.query(User).filter(User.username == username).first()
 
+
+    def get_by_id(self, db: Session, user_id: int):
+        return self.db.query(User).filter(User.user_id == user_id).first()
+        
+
     def get_all(self, skip: int = 0, limit: int = 100):
         return self.db.query(User).offset(skip).limit(limit).all()
 

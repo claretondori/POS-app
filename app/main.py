@@ -21,5 +21,5 @@ app.include_router(receipt.router)
 
 @app.get("/")
 def root():
-    return {"message": "POS API is running"}
+    return {"message": "Welcome to Clare's Point of Sale System API"}
 

@@ -5,8 +5,13 @@ from sqlalchemy.orm import Session
 from app.database import get_db
 from app.services.product_service import ProductService
 from app.schemas import product as schemas
+from app.dependencies import get_current_user
+router = APIRouter(
+    prefix="/products", 
+    tags=["Products"], 
+    dependencies= [Depends(get_current_user)],
 
-router = APIRouter(prefix="/products", tags=["Products"])
+    )
 
 
 @router.get("/", response_model=List[schemas.ProductOut])
